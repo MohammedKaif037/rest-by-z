@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --toastify-color-light: theme('colors.white');
+  --toastify-color-dark: theme('colors.dark.800');
+  --toastify-color-info: theme('colors.primary.500');
+  --toastify-color-success: theme('colors.accent.500');
+  --toastify-color-warning: theme('colors.amber.500');
+  --toastify-color-error: theme('colors.red.500');
+}
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-dark-950 to-dark-900 text-white min-h-screen;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-500 hover:bg-primary-600 text-white focus:ring-primary-500;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-500 hover:bg-secondary-600 text-white focus:ring-secondary-500;
+  }
+  
+  .btn-accent {
+    @apply bg-accent-500 hover:bg-accent-600 text-white focus:ring-accent-500;
+  }
+  
+  .btn-outline {
+    @apply border border-dark-300 hover:bg-dark-800 text-dark-100 focus:ring-dark-300;
+  }
+  
+  .input {
+    @apply bg-dark-800 border border-dark-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200;
+  }
+  
+  .card {
+    @apply bg-dark-800 rounded-xl border border-dark-700 shadow-lg overflow-hidden;
+  }
+  
+  .glass {
+    @apply bg-dark-800/70 backdrop-blur-md border border-dark-700/50;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-dark-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-dark-600;
+}
+
+/* Code highlighting styles */
+.hljs {
+  @apply bg-dark-900 p-4 rounded-lg overflow-auto;
+}
+
+/* Animation keyframes */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
